@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - iBookingSystem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="./css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+        <div class="bg-dark text-white border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4">
+                <i class="fas fa-train fa-2x mb-2"></i>
+                <h4>iBookingSystem</h4>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                </a>
+                <a href="book-ticket.html" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fas fa-ticket-alt me-2"></i>Book Ticket
+                </a>
+                <a href="my-bookings.html" class="list-group-item list-group-item-action bg-dark text-white active">
+                    <i class="fas fa-history me-2"></i>My Bookings
+                </a>
+                <a href="my-trips.html" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fas fa-route me-2"></i>My Trips
+                </a>
+                <a href="payment-details.html" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fas fa-credit-card me-2"></i>Payment Details
+                </a>
+                <a href="account-settings.html" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fas fa-user-cog me-2"></i>Account Settings
+                </a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-dark" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="navbar-nav ms-auto">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle me-1"></i> Nokubonga Mzileni
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="account-settings.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid px-4">
+                <div class="row my-4">
+                    <div class="col-lg-12">
+                        <h2 class="border-bottom pb-2">My Bookings</h2>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-lg-12">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0"><i class="fas fa-history me-2"></i>Booking History</h4>
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown">
+                                        <i class="fas fa-filter me-2"></i>Filter
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">All Bookings</a></li>
+                                        <li><a class="dropdown-item" href="#">Upcoming</a></li>
+                                        <li><a class="dropdown-item" href="#">Completed</a></li>
+                                        <li><a class="dropdown-item" href="#">Cancelled</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Booking ID</th>
+                                                <th>Transport</th>
+                                                <th>Route</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>Passengers</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#IB12345</td>
+                                                <td><span class="badge bg-info">Train</span></td>
+                                                <td>Jozi to Vereeniging</td>
+                                                <td>15 Jun 2023</td>
+                                                <td>08:30 AM</td>
+                                                <td>2</td>
+                                                <td>R125.00</td>
+                                                <td><span class="badge bg-success">Confirmed</span></td>
+                                                <td>
+                                                    <a href="ticket-details.html" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a>
+                                                    <button class="btn btn-sm btn-success"><i class="fas fa-download"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#IB12346</td>
+                                                <td><span class="badge bg-warning text-dark">Bus</span></td>
+                                                <td>Johannesburg to Pretoria</td>
+                                                <td>20 Jun 2023</td>
+                                                <td>02:15 PM</td>
+                                                <td>1</td>
+                                                <td>R85.50</td>
+                                                <td><span class="badge bg-success">Confirmed</span></td>
+                                                <td>
+                                                    <a href="ticket-details.html" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a>
+                                                    <button class="btn btn-sm btn-success"><i class="fas fa-download"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#IB12347</td>
+                                                <td><span class="badge bg-info">Train</span></td>
+                                                <td>Mtubatuba to Nongoma</td>
+                                                <td>25 Jun 2023</td>
+                                                <td>10:45 AM</td>
+                                                <td>3</td>
+                                                <td>R110.00</td>
+                                                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                                <td>
+                                                    <a href="ticket-details.html" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a>
+                                                    <button class="btn btn-sm btn-success" disabled><i class="fas fa-download"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>#IB12348</td>
+                                                <td><span class="badge bg-warning text-dark">Bus</span></td>
+                                                <td>Vryheid to Newcasle</td>
+                                                <td>30 Jun 2023</td>
+                                                <td>05:30 PM</td>
+                                                <td>1</td>
+                                                <td>R75.25</td>
+                                                <td><span class="badge bg-danger">Cancelled</span></td>
+                                                <td>
+                                                    <a href="ticket-details.html" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a>
+                                                    <button class="btn btn-sm btn-success"><i class="fas fa-download"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <nav aria-label="Page navigation" class="mt-4">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>
